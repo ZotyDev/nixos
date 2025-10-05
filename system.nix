@@ -4,9 +4,6 @@
   ];
 
   console.keyMap = "br-abnt2";
-  
-  networking.hostName = hostname;
-  networking.networkmanager.enable = true;
 
   environment.systemPackages = with pkgs; [
     git

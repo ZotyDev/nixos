@@ -4,6 +4,7 @@
   username,
   hostname,
   profile,
+  host, 
   ...
 }:
 let
