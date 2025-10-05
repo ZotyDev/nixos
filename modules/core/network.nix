@@ -1,11 +1,11 @@
 {
   pkgs,
-  hostname,
+  host,
   ...
 }:
 {
   networking = {
-    hostName = "${hostname}";
+    hostName = "${host}";
     networkmanager.enable = true;
     firewall = {
       enable = true;

@@ -20,7 +20,6 @@
     let 
       system = "x86_64-linux";
       host = "asus-laptop";
-      hostname = "nixos";  
       username = "zoty";
       profile = "intel";
 
@@ -30,7 +29,6 @@
 	specialArgs = {
           inherit inputs;
 	  inherit host;
-	  inherit hostname;
 	  inherit username;
 	  inherit profile; # keep using the let-bound profile for modules/scripts
 	};
