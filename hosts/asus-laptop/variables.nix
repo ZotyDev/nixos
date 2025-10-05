@@ -7,7 +7,7 @@ in
   inherit gitUsername;
   inherit gitEmail;
 
-  keyboardLayout = "br-abnt2"; 
+  keyboardLayout = "br"; 
   consoleKeyMap = "br-abnt2";
   i18nLocale = "en_US.UTF-8";
 }
