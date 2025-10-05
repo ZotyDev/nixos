@@ -1,5 +1,5 @@
 {
-  description = "A very basic flake";
+  description = "HydraOS";
 
   inputs = { 
     nixpkgs.url = "github:nixos/nixpkgs/nixos-25.05";
@@ -19,23 +19,34 @@
     }@inputs:
     let 
       system = "x86_64-linux";
+      host = "asus-laptop";
       hostname = "nixos";  
       username = "zoty";
-      host = "asus-laptop";
-    in
-    {
-      nixosConfigurations.${hostname} = nixpkgs.lib.nixosSystem {
+      profile = "intel";
+
+      # Deduplicate nixosConfigurtaions while preserving the top-level 'profile'
+      mkNixosConfig = gpuProfile: nixpkgs.lib.nixosSystem {
         inherit system;
 	specialArgs = {
           inherit inputs;
-	  inherit username;
-	  inherit hostname;
 	  inherit host;
+	  inherit hostname;
+	  inherit username;
+	  inherit profile; # keep using the let-bound profile for modules/scripts
 	};
-	modules = [
-	  ./modules/core
-          ./system.nix 
+	modules =[
+	  ./profiles/${gpuProfile}
 	];
       };
-    };
+    in
+    {
+      nixosConfigurations = {
+        amd = mkNixosConfig "amd";
+	nvidia = mkNixosConfig "nvidia";
+	nvidia-laptop = mkNixosConfig "nvidia-laptop";
+	amd-hybrid = mkNixosConfig "amd-hybrid";
+	intel = mkNixosConfig "intel";
+	vm = mkNixosConfig "vm";
+      };
+  };
 }
