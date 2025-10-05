@@ -11,10 +11,5 @@
   environment.systemPackages = with pkgs; [
     git
     neovim
-  ];
-  
-  users.users.${username} = {
-    isNormalUser = true;
-    extraGroups = [ "wheel" ];
-  }; 
+  ]; 
 }
