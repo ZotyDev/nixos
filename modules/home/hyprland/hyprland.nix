@@ -11,7 +11,24 @@ let
   ;
 in
 {
-  home.packages = with pkgs; [];
+  home.packages = with pkgs; [
+    swww
+    wl-clipboard
+    hyprpolkitagent
+    hyprland-qtutils # needed for banners and ANR messages
+  ];
+
+  systemd.user.targets.hyprland-session.Unit.Wants = [
+    "xdg-desktop-autostart.target"
+  ];
+
+  # Place files inside home directory
+  home.file = {
+    "Pictures/Wallpapers" = {
+      source = ../../../wallpapers;
+      recursive = true;
+    };
+  };
 
   wayland.windowManager.hyprland = {
     enable = true;

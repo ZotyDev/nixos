@@ -1,4 +1,7 @@
-{ ... }: {
+{ 
+  inputs,
+  ...
+}: {
   imports = [
     ./boot.nix
     ./system.nix
@@ -8,5 +11,8 @@
     ./xserver.nix
     ./services.nix
     ./packages.nix
+    ./stylix.nix
+
+    inputs.stylix.nixosModules.stylix
   ];
 }

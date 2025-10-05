@@ -15,6 +15,7 @@ in
       "$modifier,B,exec,${defaultBrowser}"
       "$modifier,K,exec,list-keybinds"
       "$modifier,R,exec,rofi-launcher"
+      "$modifier ALT,W,exec,wallsetter"
       
       "$modifier,F,togglefloating"
 

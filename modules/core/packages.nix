@@ -18,5 +18,6 @@
   environment.systemPackages = with pkgs; [
     ncdu # Disk Usage Analyzer With Ncurses Interface
     btop
+    waypaper # Change Wallpaper
   ];
 }
