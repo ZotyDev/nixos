@@ -1,8 +1,17 @@
-{ pkgs, ... }: {
+{ 
+  pkgs, 
+  ... 
+}: 
+{
   programs = {
     neovim = {
       enable = true;
       defaultEditor = true;
+    };
+    firefox.enable = true;
+    hyprland = {
+      enable = true;
+      withUWSM = false;
     };
   };
 
