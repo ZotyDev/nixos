@@ -20,6 +20,7 @@
       system = "x86_64-linux";
       hostname = "nixos";  
       username = "zoty";
+      host = "asus-laptop";
     in
     {
       nixosConfigurations.${hostname} = nixpkgs.lib.nixosSystem {
@@ -28,6 +29,7 @@
           inherit inputs;
 	  inherit username;
 	  inherit hostname;
+	  inherit host;
 	};
 	modules = [
 	  ./modules/core

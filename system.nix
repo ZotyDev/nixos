@@ -3,10 +3,6 @@
     ./hardware-configuration.nix
   ];
 
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
-
-  time.timeZone = "America/Sao_Paulo";
-
   console.keyMap = "br-abnt2";
   
   networking.hostName = hostname;
@@ -21,6 +17,4 @@
     isNormalUser = true;
     extraGroups = [ "wheel" ];
   }; 
-
-  system.stateVersion = "25.05";
 }
