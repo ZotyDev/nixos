@@ -16,15 +16,15 @@ in
     profiles = {
       default = {
         enableExtensionUpdateCheck = false;
-	enableUpdateCheck = false;
+	      enableUpdateCheck = false;
         extensions = with pkgs.vscode-extensions; 
-	  marketplace-extensions
-	  ++ [
-	    alefragnani.bookmarks
+	        marketplace-extensions
+          ++ [
+            alefragnani.bookmarks
             editorconfig.editorconfig	    
-	    aaron-bond.better-comments
-	    pkief.material-icon-theme
-	  ];
+            aaron-bond.better-comments
+            pkief.material-icon-theme
+          ];
           # ms-azuretools.vscode-containers
           # mikestead.dotenv
           # mrmlnc.vscode-duplicate
@@ -35,17 +35,17 @@ in
           # ms-vscode-remote.remote-ssh-edit
           # ms-vscode.remote-server
           # ms-vscode.remote-explore
-	userSettings = {
-	  "editor.formatOnSave" = false;
-          "editor.minimap.enabled" = true;
-	  "editor.minimap.renderCharacters" = false;
-          "editor.renderControlCharacters" = true;
-	  "editor.semanticHighlighting.enabled" = true;
-	  "editor.tabCompletion" = "on";
-	  "editor.wordWrap" = "on";
-	  "[nix]"."editor.defaultFormatter" = "jnoortheen.nix-ide";
-	  "workbench.iconTheme" = "material-icon-theme";
-	};
+          userSettings = {
+            "editor.formatOnSave" = false;
+            "editor.minimap.enabled" = true;
+            "editor.minimap.renderCharacters" = false;
+            "editor.renderControlCharacters" = true;
+            "editor.semanticHighlighting.enabled" = true;
+            "editor.tabCompletion" = "on";
+            "editor.wordWrap" = "on";
+            "[nix]"."editor.defaultFormatter" = "jnoortheen.nix-ide";
+            "workbench.iconTheme" = "material-icon-theme";
+        };
       };
     };
   };

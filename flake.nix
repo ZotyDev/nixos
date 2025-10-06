@@ -20,9 +20,9 @@
     }@inputs:
     let 
       system = "x86_64-linux";
-      host = "asus-laptop";
+      host = "intel-nvidia-desktop";
       username = "zoty";
-      profile = "intel";
+      profile = "nvidia";
 
       # Deduplicate nixosConfigurtaions while preserving the top-level 'profile'
       mkNixosConfig = gpuProfile: nixpkgs.lib.nixosSystem {

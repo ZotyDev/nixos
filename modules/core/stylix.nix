@@ -22,21 +22,21 @@ in
     fonts = {
       monospace = {
         package = pkgs.nerd-fonts.jetbrains-mono;
-	name = "JetBrains Mono";
+	      name = "JetBrains Mono";
       };
       sansSerif = {
         package = pkgs.montserrat;
-	name = "Montserrat";
+	      name = "Montserrat";
       };
       serif = {
         package = pkgs.montserrat;
-	name = "Montserrat";
+	      name = "Montserrat";
       };
       sizes = {
         applications = 12;
-	terminal = 15;
-	desktop = 11;
-	popups = 12;
+	      terminal = 15;
+	      desktop = 11;
+	      popups = 12;
       };
     };
   };

@@ -45,12 +45,12 @@ in
       prime = {
         offload = {
           enable = true;
-	  enableOffloadCmd = true;
-	};
+          enableOffloadCmd = true;
+        };
 
-	# Wire from options
-	amdgpuBusId = cfg.amdgpuBusID;
-	nvidiaBusId = cfg.nvidiaBusID;
+        # Wire from options
+        amdgpuBusId = cfg.amdgpuBusID;
+        nvidiaBusId = cfg.nvidiaBusID;
       };
     };
   };

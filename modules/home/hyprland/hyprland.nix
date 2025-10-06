@@ -44,17 +44,17 @@ in
     settings = {
       input = {
         kb_layout = "${keyboardLayout}";
-	kb_variant = "${keyboardVariant}";
-	kb_options = [];
-	numlock_by_default = false;
-	repeat_delay = 300;
+        kb_variant = "${keyboardVariant}";
+        kb_options = [];
+        numlock_by_default = false;
+        repeat_delay = 300;
         follow_mouse = 1;
         float_switch_override_focus = 0;
-	sensitivity = 0;
-	touchpad = {
+        sensitivity = 0;
+        touchpad = {
           natural_scroll = true;
           disable_while_typing = true;
-	  scroll_factor = 0.8;
+	        scroll_factor = 0.8;
         };
       };
 
@@ -109,17 +109,17 @@ in
         rounding = 5;
         blur = {
           enabled = true;
-	  size = 3;
-	  passes = 1;
-	  ignore_opacity = false;
-	  new_optimizations = true;
-	  vibrancy = 0.1696;
+          size = 3;
+          passes = 1;
+          ignore_opacity = false;
+          new_optimizations = true;
+          vibrancy = 0.1696;
         };
         shadow = {
           enabled = true;
-	  range = 4;
-	  render_power = 3;
-	  color = "rgba(1a1a1aee)";
+          range = 4;
+          render_power = 3;
+          color = "rgba(1a1a1aee)";
         };
       };
 

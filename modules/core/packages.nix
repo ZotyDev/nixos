@@ -21,5 +21,7 @@
     ncdu # Disk Usage Analyzer With Ncurses Interface
     btop
     waypaper # Change Wallpaper
+    pavucontrol
+    bitwarden-desktop
   ];
 }
