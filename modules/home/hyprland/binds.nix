@@ -17,6 +17,7 @@ in
       "$modifier,R,exec,rofi-launcher"
       "$modifier ALT,W,exec,wallsetter"
       "$modifier,C,killactive"
+      "$modifier,E,exec,rofi -show drun"
       
       "$modifier,F,togglefloating"
 
