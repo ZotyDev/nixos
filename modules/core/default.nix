@@ -4,6 +4,7 @@
 }: {
   imports = [
     ./boot.nix
+    ./zramswap.nix
     ./system.nix
     ./user.nix
     ./security.nix
