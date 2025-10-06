@@ -27,5 +27,7 @@
     kdePackages.kio-fuse
     kdePackages.kio-extras
     kdePackages.dolphin
+    stremio
+    discord
   ];
 }
