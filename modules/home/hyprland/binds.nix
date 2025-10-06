@@ -16,6 +16,7 @@ in
       "$modifier,K,exec,list-keybinds"
       "$modifier,R,exec,rofi-launcher"
       "$modifier ALT,W,exec,wallsetter"
+      "$modifier,C,killactive"
       
       "$modifier,F,togglefloating"
 

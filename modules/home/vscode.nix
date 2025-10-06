@@ -24,27 +24,33 @@ in
             editorconfig.editorconfig	    
             aaron-bond.better-comments
             pkief.material-icon-theme
+            usernamehw.errorlens
+            yzhang.markdown-all-in-one
           ];
           # ms-azuretools.vscode-containers
           # mikestead.dotenv
           # mrmlnc.vscode-duplicate
-          # usernamehw.errorlens
           # tamasfe.even-better-toml
-          # yzhang.markdown-all-in-one
           # ms-vscode-remote.remote-ssh
           # ms-vscode-remote.remote-ssh-edit
           # ms-vscode.remote-server
           # ms-vscode.remote-explore
-          userSettings = {
-            "editor.formatOnSave" = false;
-            "editor.minimap.enabled" = true;
-            "editor.minimap.renderCharacters" = false;
-            "editor.renderControlCharacters" = true;
-            "editor.semanticHighlighting.enabled" = true;
-            "editor.tabCompletion" = "on";
-            "editor.wordWrap" = "on";
-            "[nix]"."editor.defaultFormatter" = "jnoortheen.nix-ide";
-            "workbench.iconTheme" = "material-icon-theme";
+        userSettings = {
+          "editor.formatOnSave" = false;
+          "editor.minimap.enabled" = true;
+          "editor.minimap.renderCharacters" = false;
+          "editor.renderControlCharacters" = true;
+          "editor.semanticHighlighting.enabled" = true;
+          "editor.fontLigatures" = true;
+          "editor.tabCompletion" = "on";
+          "editor.wordWrap" = "on";
+          "editor.cursorSmoothCaretAnimation" = "on";
+          "[nix]"."editor.defaultFormatter" = "jnoortheen.nix-ide";
+          "workbench.iconTheme" = "material-icon-theme";
+          "terminal.integrated.fontLigatures.enabled" = true;
+
+          "chat.disableAIFeatures" = false;
+          "chat.mcp.access" = "none";
         };
       };
     };
