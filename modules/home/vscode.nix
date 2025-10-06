@@ -1,5 +1,6 @@
 {
   inputs,
+  lib,
   pkgs,
   ...
 }:
@@ -45,9 +46,22 @@ in
           "editor.tabCompletion" = "on";
           "editor.wordWrap" = "on";
           "editor.cursorSmoothCaretAnimation" = "on";
-          "[nix]"."editor.defaultFormatter" = "jnoortheen.nix-ide";
+
           "workbench.iconTheme" = "material-icon-theme";
+
           "terminal.integrated.fontLigatures.enabled" = true;
+
+          "[nix]"."editor.defaultFormatter" = "jnoortheen.nix-ide";
+          "nix.enableLanguageServer" = true;
+          "nix.formatterPath" = "nixfmt";
+          "nix.serverPath" = (lib.getExe pkgs.nixd);
+          "nix.serverSettings"."nixd"."formatting"."commands" = [ "nixfmt" ];
+          "nix.serverSettings"."nixd"."formatting"."options" = {
+            "enable" = [ true ];
+          };
+
+          "git.autofetch" = true;
+          "git.enableCommitSigning" = true;
 
           "chat.disableAIFeatures" = false;
           "chat.mcp.access" = "none";
