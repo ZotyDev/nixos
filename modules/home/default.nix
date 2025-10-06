@@ -10,6 +10,7 @@
     ./wezterm.nix
     ./stylix.nix
     ./vscode.nix
+    ./prismlauncher.nix
 
     ./scripts
     ./hyprland

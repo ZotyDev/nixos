@@ -23,5 +23,9 @@
     waypaper # Change Wallpaper
     pavucontrol
     bitwarden-desktop
+    kdePackages.qtsvg
+    kdePackages.kio-fuse
+    kdePackages.kio-extras
+    kdePackages.dolphin
   ];
 }
