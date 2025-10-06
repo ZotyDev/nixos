@@ -14,6 +14,8 @@
       withUWSM = false;
     };
   };
+  
+  nixpkgs.config.allowUnfree = true;
 
   environment.systemPackages = with pkgs; [
     ncdu # Disk Usage Analyzer With Ncurses Interface

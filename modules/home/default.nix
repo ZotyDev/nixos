@@ -9,6 +9,7 @@
     ./gtk.nix
     ./wezterm.nix
     ./stylix.nix
+    ./vscode.nix
 
     ./scripts
     ./hyprland
