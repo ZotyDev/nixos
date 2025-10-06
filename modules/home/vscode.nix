@@ -6,6 +6,8 @@
 }:
 let marketplace-extensions =
   with inputs.nix-vscode-extensions.extensions.x86_64-linux.vscode-marketplace; [
+    mrmlnc.vscode-duplicate
+    ms-azuretools.vscode-containers
     jnoortheen.nix-ide
   ];
 in
@@ -28,9 +30,7 @@ in
             usernamehw.errorlens
             yzhang.markdown-all-in-one
           ];
-          # ms-azuretools.vscode-containers
           # mikestead.dotenv
-          # mrmlnc.vscode-duplicate
           # tamasfe.even-better-toml
           # ms-vscode-remote.remote-ssh
           # ms-vscode-remote.remote-ssh-edit
