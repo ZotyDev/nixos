@@ -20,7 +20,7 @@ in
       };
       background = [
         {
-          path = "/home/${username}/Pictures/Wallpapers/${stylixImage}";
+          path = "/home/${username}/Pictures/Wallpapers/cartoon-wizard.jpg";
           blur_passes = 3;
           blur_size = 8;
         }
