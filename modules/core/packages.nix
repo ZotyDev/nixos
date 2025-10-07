@@ -1,4 +1,5 @@
 { 
+  lib,
   pkgs, 
   ... 
 }: 
@@ -14,7 +15,7 @@
       withUWSM = false;
     };
   };
-  
+
   nixpkgs.config.allowUnfree = true;
 
   environment.systemPackages = with pkgs; [

@@ -16,6 +16,8 @@ in
 
   keyboardLayout = "us"; 
   keyboardVariant = "";
+  secondaryKeyboardLayout = "br";
+  secondaryKeyboardVariant = "abnt2";
   consoleKeyMap = "us";
   i18nLocale = "en_US.UTF-8";
 

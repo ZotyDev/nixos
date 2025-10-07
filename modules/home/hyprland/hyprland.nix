@@ -1,6 +1,5 @@
 {
   pkgs,
-  config,
   host,
   ...
 }:
@@ -8,6 +7,8 @@ let
   inherit (import ../../../hosts/${host}/variables.nix)
     keyboardLayout
     keyboardVariant
+    secondaryKeyboardLayout
+    secondaryKeyboardVariant
   ;
 in
 {
@@ -43,9 +44,11 @@ in
     };
     settings = {
       input = {
-        kb_layout = "${keyboardLayout}";
-        kb_variant = "${keyboardVariant}";
-        kb_options = [];
+        kb_layout = "${keyboardLayout},${secondaryKeyboardLayout}";
+        kb_variant = "${keyboardVariant},${secondaryKeyboardVariant}";
+        kb_options = [
+          "grp:win_space_toggle"
+        ];
         numlock_by_default = false;
         repeat_delay = 300;
         follow_mouse = 1;

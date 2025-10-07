@@ -1,4 +1,7 @@
-{ host, ... }:
+{ 
+  host, 
+  ... 
+}:
 let
   inherit (import ../../hosts/${host}/variables.nix) consoleKeyMap i18nLocale;
 in

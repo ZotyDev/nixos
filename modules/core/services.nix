@@ -1,4 +1,7 @@
-{ pkgs, config, ... }: {
+{ 
+  ... 
+}: 
+{
   services = {
     libinput.enable = true;
     fstrim.enable = true;

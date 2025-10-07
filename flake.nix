@@ -12,40 +12,40 @@
   };
 
   outputs = 
-    { 
-      self,
-      nixpkgs, 
-      home-manager,
-      ...
-    }@inputs:
-    let 
-      system = "x86_64-linux";
-      host = "intel-nvidia-desktop";
-      username = "zoty";
-      profile = "nvidia";
+  { 
+    self,
+    nixpkgs, 
+    home-manager,
+    ...
+  }@inputs:
+  let 
+    system = "x86_64-linux";
+    host = "intel-nvidia-desktop";
+    username = "zoty";
+    profile = "nvidia";
 
-      # Deduplicate nixosConfigurtaions while preserving the top-level 'profile'
-      mkNixosConfig = gpuProfile: nixpkgs.lib.nixosSystem {
-        inherit system;
-	specialArgs = {
-          inherit inputs;
-	  inherit host;
-	  inherit username;
-	  inherit profile; # keep using the let-bound profile for modules/scripts
-	};
-	modules =[
-	  ./profiles/${gpuProfile}
-	];
+    # Deduplicate nixosConfigurtaions while preserving the top-level 'profile'
+    mkNixosConfig = gpuProfile: nixpkgs.lib.nixosSystem {
+      inherit system;
+      specialArgs = {
+        inherit inputs;
+        inherit host;
+        inherit username;
+        inherit profile; # keep using the let-bound profile for modules/scripts
       };
-    in
-    {
-      nixosConfigurations = {
-        amd = mkNixosConfig "amd";
-	nvidia = mkNixosConfig "nvidia";
-	nvidia-laptop = mkNixosConfig "nvidia-laptop";
-	amd-hybrid = mkNixosConfig "amd-hybrid";
-	intel = mkNixosConfig "intel";
-	vm = mkNixosConfig "vm";
-      };
+      modules =[
+        ./profiles/${gpuProfile}
+      ];
+    };
+  in
+  {
+    nixosConfigurations = {
+      amd = mkNixosConfig "amd";
+      nvidia = mkNixosConfig "nvidia";
+      nvidia-laptop = mkNixosConfig "nvidia-laptop";
+      amd-hybrid = mkNixosConfig "amd-hybrid";
+      intel = mkNixosConfig "intel";
+      vm = mkNixosConfig "vm";
+    };
   };
 }

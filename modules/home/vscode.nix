@@ -7,13 +7,15 @@
 let marketplace-extensions =
   with inputs.nix-vscode-extensions.extensions.x86_64-linux.vscode-marketplace; [
     mrmlnc.vscode-duplicate
-    ms-azuretools.vscode-containers
     jnoortheen.nix-ide
+    ms-azuretools.vscode-containers
+    # ms-vscode-remote.remote-ssh
+    # ms-vscode-remote.remote-ssh-edit
+    # ms-vscode.remote-server
+    # ms-vscode.remote-explorer
   ];
 in
 {
-  nixpkgs.config.allowUnfree = true; 
-
   programs.vscode = {
     enable = true;
     profiles = {
@@ -32,10 +34,6 @@ in
           ];
           # mikestead.dotenv
           # tamasfe.even-better-toml
-          # ms-vscode-remote.remote-ssh
-          # ms-vscode-remote.remote-ssh-edit
-          # ms-vscode.remote-server
-          # ms-vscode.remote-explore
         userSettings = {
           "editor.formatOnSave" = false;
           "editor.minimap.enabled" = true;
