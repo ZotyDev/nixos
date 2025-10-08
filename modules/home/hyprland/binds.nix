@@ -18,6 +18,7 @@ in
       "$modifier ALT,W,exec,wallsetter"
       "$modifier,C,killactive"
       "$modifier,E,exec,rofi -show drun"
+      "$modifier,L,exec,hyprlock"
       
       "$modifier,F,togglefloating"
 
