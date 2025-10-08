@@ -13,6 +13,7 @@
     ./services.nix
     ./packages.nix
     ./stylix.nix
+    ./steam.nix
 
     inputs.stylix.nixosModules.stylix
   ];
