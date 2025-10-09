@@ -45,5 +45,14 @@ in
       "networkmanager"
     ];
   };
-  nix.settings.allowed-users = [ "${username}" ];
+  nix.settings = {
+    allowed-users = [ 
+      "${username}" 
+      ];
+    trusted-users = [ 
+      "root" 
+      "${username}" 
+      "@wheel" 
+    ];
+  };
 }

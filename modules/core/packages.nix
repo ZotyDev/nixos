@@ -21,6 +21,7 @@
   environment.systemPackages = with pkgs; [
     ncdu # Disk Usage Analyzer With Ncurses Interface
     btop
+    devenv
     waypaper # Change Wallpaper
     pavucontrol
     bitwarden-desktop
