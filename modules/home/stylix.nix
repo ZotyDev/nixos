@@ -9,5 +9,12 @@
       enable = true;
       platform = "qtct";
     };
+    vscode = {
+      enable = true;
+      profileNames = [
+        "default"
+        "rust"
+      ];
+    };
   };
 }

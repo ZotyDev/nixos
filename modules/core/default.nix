@@ -12,6 +12,7 @@
     ./xserver.nix
     ./services.nix
     ./packages.nix
+    ./virtualisation.nix
     ./direnv.nix
     ./stylix.nix
     ./steam.nix

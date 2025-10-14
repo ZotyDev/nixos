@@ -43,6 +43,7 @@ in
     extraGroups = [
       "wheel" # sudo access
       "networkmanager"
+      "docker" # access to docker as non-root
     ];
   };
   nix.settings = {

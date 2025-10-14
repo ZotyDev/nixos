@@ -24,11 +24,13 @@
     devenv
     waypaper # Change Wallpaper
     pavucontrol
+    docker-compose
     bitwarden-desktop
     kdePackages.qtsvg
     kdePackages.kio-fuse
     kdePackages.kio-extras
     kdePackages.dolphin
+    kdePackages.ark
     stremio
     discord
   ];
