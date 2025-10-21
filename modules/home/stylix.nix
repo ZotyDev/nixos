@@ -14,6 +14,7 @@
       profileNames = [
         "default"
         "rust"
+        "ruby"
       ];
     };
   };

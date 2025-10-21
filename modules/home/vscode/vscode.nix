@@ -13,6 +13,10 @@ let
     inherit inputs lib pkgs;
     baseProfile = vscodeDefaults.defaultProfile;
   };
+  rubyProfile = builtins.import ./profiles/ruby-profile.nix {
+    inherit inputs lib pkgs;
+    baseProfile = vscodeDefaults.defaultProfile;
+  };
 in
 {
   programs.vscode = {
@@ -20,6 +24,7 @@ in
     profiles = {
       default = vscodeDefaults.defaultProfile;
       "rust" = rustProfile;
+      "ruby" = rubyProfile;
     };
   };
 }

@@ -33,5 +33,8 @@
     kdePackages.ark
     stremio
     discord
+    jetbrains.idea-community-bin
+    jdk24
+    aseprite
   ];
 }
