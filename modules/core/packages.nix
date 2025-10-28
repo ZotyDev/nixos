@@ -36,5 +36,6 @@
     jetbrains.idea-community-bin
     jdk24
     aseprite
+    unrar
   ];
 }

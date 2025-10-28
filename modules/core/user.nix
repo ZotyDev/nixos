@@ -1,4 +1,5 @@
 {
+  pkgs,
   inputs,
   username,
   profile,
@@ -36,6 +37,7 @@ in
     };
   };
 
+  users.defaultUserShell = pkgs.zsh;
   users.mutableUsers = true;
   users.users.${username} = {
     isNormalUser = true;

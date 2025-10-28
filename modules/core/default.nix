@@ -10,6 +10,7 @@
     ./security.nix
     ./network.nix
     ./xserver.nix
+    ./zsh.nix
     ./services.nix
     ./packages.nix
     ./virtualisation.nix
