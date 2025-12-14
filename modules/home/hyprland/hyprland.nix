@@ -1,8 +1,11 @@
 {
+  lib,
   pkgs,
   host,
+  desktopCompositor ? "hyprland",
   ...
 }:
+with lib;
 let 
   inherit (import ../../../hosts/${host}/variables.nix)
     keyboardLayout
@@ -10,20 +13,20 @@ let
     secondaryKeyboardLayout
     secondaryKeyboardVariant
   ;
+  enabled = desktopCompositor == "hyprland";
 in
-{
+mkIf enabled {
   home.packages = with pkgs; [
     swww
     wl-clipboard
     hyprpolkitagent
-    hyprland-qtutils # needed for banners and ANR messages
+    hyprland-qtutils
   ];
 
   systemd.user.targets.hyprland-session.Unit.Wants = [
     "xdg-desktop-autostart.target"
   ];
 
-  # Place files inside home directory
   home.file = {
     "Pictures/Wallpapers" = {
       source = ../../../wallpapers;
@@ -89,13 +92,9 @@ in
         disable_hyprland_logo = true;
         disable_splash_rendering = true;
         enable_swallow = false;
-        vfr = true; # Variable Frame Rate
-        vrr = 2; # Variable Refresh Rate
-        # Might need to set to 0 for NVIDIA/AQ_DRM_DEVICES
-        # Screen flashing to black momentarily or going black when app is fullscreen
-        # Try setting vrr to 0
+        vfr = true;
+        vrr = 2;
 
-        # Application not responding (ANR) settings
         enable_anr_dialog = true;
         anr_missed_pings = 15;
       };
@@ -131,7 +130,7 @@ in
 
       cursor = {
         sync_gsettings_theme = true;
-        no_hardware_cursors = 2; # change to 1 if want to disable
+        no_hardware_cursors = 2;
         enable_hyprcursor = false;
         warp_on_change_workspace = 2;
         no_warps = true;
@@ -147,7 +146,6 @@ in
         mfact = 0.5;
       };
       
-      # Ensure Xwayland windows render at integer scale; compositor scales them
       xwayland = {
         force_zero_scaling = true;
       }; 

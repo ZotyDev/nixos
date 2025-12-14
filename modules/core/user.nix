@@ -28,6 +28,7 @@ in
         host 
         profile
       ; 
+      desktopCompositor = config.cube.desktop.compositor;
     };
     users.${username} = {
       imports = [ ./../home ];
@@ -50,6 +51,7 @@ in
       "wheel" # sudo access
       "networkmanager"
       "docker" # access to docker as non-root
+      "gaming"
     ];
     hashedPasswordFile = config.sops.secrets.user-password.path;
   };

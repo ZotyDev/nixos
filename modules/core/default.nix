@@ -19,6 +19,7 @@
     ./direnv.nix
     ./stylix.nix
     ./secrets.nix
+    ./gc.nix
 
     inputs.sops-nix.nixosModules.sops
     inputs.stylix.nixosModules.stylix

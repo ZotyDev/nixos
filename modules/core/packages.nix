@@ -11,10 +11,6 @@
       defaultEditor = true;
     };
     firefox.enable = true;
-    hyprland = {
-      enable = true;
-      withUWSM = false;
-    };
   };
 
   nixpkgs.config.allowUnfree = true;

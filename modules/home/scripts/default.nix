@@ -1,6 +1,5 @@
 {
   pkgs,
-  username,
   ...
 }:
 {
@@ -9,6 +8,9 @@
       inherit pkgs;
     })
     (import ./wallsetter.nix {
+      inherit pkgs;
+    })
+    (import ./screenshot.nix {
       inherit pkgs;
     })
   ];

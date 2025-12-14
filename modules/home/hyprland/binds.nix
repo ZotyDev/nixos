@@ -16,6 +16,7 @@ in
       "$modifier,K,exec,list-keybinds"
       "$modifier,R,exec,rofi-launcher"
       "$modifier ALT,W,exec,wallsetter"
+      "$modifier SHIFT,S,exec,screenshot"
       "$modifier,C,killactive"
       "$modifier,E,exec,rofi -show drun"
       "$modifier,L,exec,hyprlock"

@@ -7,6 +7,13 @@
   ];
   drivers.nvidia.enable = true;
 
+  # Desktop configuration
+  cube.desktop = {
+    enable = true;
+    compositor = "hyprland";
+  };
+
+  # Gaming Setup
   cube.gaming = {
     enable = true;
 

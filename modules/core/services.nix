@@ -6,14 +6,6 @@
     libinput.enable = true;
     fstrim.enable = true;
     gvfs.enable = true;
-    openssh = {
-      enable = true;
-      settings = {
-        PermitRootLogin = "no";
-        PasswordAuthentication = false;
-      };
-      ports = [ 22 ];
-    };
 
     pipewire = {
       enable = true;
