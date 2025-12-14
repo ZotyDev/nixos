@@ -10,7 +10,12 @@ pkgs.writeShellScriptBin "record" ''
   else
     # Starts recording
     FILENAME="$HOME/Videos/recording-$(date +%Y%m%d-%H%M%S).mp4"
-    ${pkgs.wf-recorder}/bin/wf-recorder -g "$(${pkgs.slurp}/bin/slurp)" -f "$FILENAME" &
+    AUDIO_DEVICE="$(${pkgs.pipewire}/bin/pactl get-default-sink).monitor"
+    ${pkgs.wf-recorder}/bin/wf-recorder \
+      -g "$(${pkgs.slurp}/bin/slurp)" \
+      -f "$FILENAME" \
+      --audio="$AUDIO_DEVICE" \
+      &
     echo $! > "$PIDFILE"
     ${pkgs.libnotify}/bin/notify-send "Recording started"
   fi
