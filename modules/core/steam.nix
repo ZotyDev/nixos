@@ -9,10 +9,19 @@
   programs.steam = {
     enable = true;
     gamescopeSession.enable = true;
+    protontricks = {
+      enable = true;
+      package = pkgs.protontricks;
+    };
+    extraCompatPackages = with pkgs; [
+      proton-ge-bin
+    ]
+    ;
   };
 
   environment.defaultPackages = with pkgs; [
     mangohud
+    heroic
   ];
 
   programs.gamemode.enable = true;

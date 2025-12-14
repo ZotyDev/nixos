@@ -24,6 +24,7 @@ lib.mkMerge [
       "editor.formatOnSave" = true;
       "editor.defaultFormatter" = "rust-lang.rust-analyzer";
 
+      # "rust-analyzer.server.path" = "rust-analyzer";
       "rust-analyzer.checkOnSave" = true;
       "rust-analyzer.cargo.runBuildScripts" = true;
       "rust-analyzer.check.command" = "clippy";

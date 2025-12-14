@@ -2,12 +2,19 @@
   description = "HydraOS";
 
   inputs = { 
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-25.05";
-    home-manager = {
-      url = "github:nix-community/home-manager/release-25.05";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    stylix.url = "github:danth/stylix/release-25.05";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-25.05";
+    # Home Manager
+    home-manager.url = "github:nix-community/home-manager";
+    home-manager.inputs.nixpkgs.follows = "nixpkgs";
+    # Stylix (Colors and Themes)
+    stylix.url = "github:danth/stylix";
+    stylix.inputs.nixpkgs.follows = "nixpkgs";
+    # Plasma Manager (KDE)
+    plasma-manager.url = "github:nix-community/plasma-manager";
+    plasma-manager.inputs.nixpkgs.follows = "nixpkgs";
+    plasma-manager.inputs.home-manager.follows = "home-manager";
+    # VSCode Marketplace
     nix-vscode-extensions.url = "github:nix-community/nix-vscode-extensions";
   };
 
@@ -15,7 +22,9 @@
   { 
     self,
     nixpkgs, 
+    nixpkgs-stable,
     home-manager,
+    plasma-manager,
     ...
   }@inputs:
   let 
@@ -23,6 +32,11 @@
     host = "intel-nvidia-desktop";
     username = "zoty";
     profile = "nvidia";
+
+    pkgsStable = import nixpkgs-stable {
+      inherit system;
+      config.allowUnfree = true;
+    };
 
     # Deduplicate nixosConfigurtaions while preserving the top-level 'profile'
     mkNixosConfig = gpuProfile: nixpkgs.lib.nixosSystem {
@@ -32,6 +46,7 @@
         inherit host;
         inherit username;
         inherit profile; # keep using the let-bound profile for modules/scripts
+        inherit pkgsStable; # some packages need to be stable
       };
       modules =[
         ./profiles/${gpuProfile}

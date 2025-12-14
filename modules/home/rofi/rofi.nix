@@ -13,7 +13,6 @@ in
   programs = {
     rofi = {
       enable = true;
-      package = pkgs.rofi-wayland;
       extraConfig = {
         # General
         modi = "drun,run,filebrowser,window";

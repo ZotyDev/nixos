@@ -2,11 +2,19 @@
   ... 
 }: {
   boot = {
-    loader.systemd-boot = {
-      enable = true;
-      consoleMode = "max";
+    loader = {
+      grub = {
+        enable = true;
+        device = "nodev";
+        efiSupport = true;
+        useOSProber = true;
+      };
+      systemd-boot.enable = false;
+      efi = {
+        canTouchEfiVariables = true;
+        efiSysMountPoint = "/boot";
+      };
     };
-    loader.efi.canTouchEfiVariables = true;
     plymouth.enable = true;
   };
 }

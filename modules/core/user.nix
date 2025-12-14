@@ -3,7 +3,7 @@
   inputs,
   username,
   profile,
-  host, 
+  host,
   ...
 }:
 let
@@ -16,6 +16,9 @@ in
   home-manager = {
     useUserPackages = true;
     useGlobalPkgs = true;
+    sharedModules = [
+      inputs.plasma-manager.homeModules.plasma-manager
+    ];
     backupFileExtension = "backup";
     extraSpecialArgs = { 
       inherit 

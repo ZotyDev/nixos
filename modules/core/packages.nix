@@ -1,6 +1,7 @@
 { 
   lib,
   pkgs, 
+  pkgsStable,
   ... 
 }: 
 {
@@ -26,16 +27,32 @@
     pavucontrol
     docker-compose
     bitwarden-desktop
+    kdePackages.kservice
     kdePackages.qtsvg
     kdePackages.kio-fuse
     kdePackages.kio-extras
     kdePackages.dolphin
+    kdePackages.dolphin-plugins
     kdePackages.ark
-    stremio
+    kdePackages.isoimagewriter
+    (pkgsStable.stremio)
     discord
     jetbrains.idea-community-bin
-    jdk24
+    jdk8
+    jdk17
+    jdk21
+    jdk25
     aseprite
     unrar
+    qbittorrent
+    blender
+    blockbench
+    texliveFull
+    obsidian
+    postman
+    osu-lazer
+    davinci-resolve
+    ffmpeg-full
+    hydralauncher
   ];
 }

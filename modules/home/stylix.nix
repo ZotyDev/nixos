@@ -15,6 +15,11 @@
         "default"
         "rust"
         "ruby"
+        "latex"
+        "vue"
+        "minecraft-modern"
+        "flutter"
+        "astro"
       ];
     };
   };

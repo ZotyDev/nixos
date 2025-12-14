@@ -51,6 +51,8 @@ in
     usernamehw.errorlens
     yzhang.markdown-all-in-one
     mkhl.direnv
+    formulahendry.auto-close-tag
+    formulahendry.auto-rename-tag
   ];
   defaultMarketplaceExtensions = with inputs.nix-vscode-extensions.extensions.x86_64-linux.vscode-marketplace; [
     mrmlnc.vscode-duplicate
