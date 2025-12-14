@@ -13,5 +13,8 @@
     (import ./screenshot.nix {
       inherit pkgs;
     })
+    (import ./record.nix {
+      inherit pkgs;
+    })
   ];
 }
