@@ -8,10 +8,10 @@ in
 {
   programs.git = {
     enable = true;
-    userName = "${gitUsername}";
-    userEmail = "${gitEmail}";
-    extraConfig = {
+    settings = {
       user = {
+        name = "${gitUsername}";
+        email = "${gitEmail}";
         signingKey = "~/.ssh/id_ed25519.pub";
       };
       core = {
@@ -67,7 +67,7 @@ in
         graphColors = "blue,yellow,cyan,magenta,green,red";
       };
       branch = {
-        sort = "-commiterdate";
+        sort = "-committerdate";
       };
       tag = {
         sort = "-taggerdate";
@@ -80,6 +80,7 @@ in
       };
       url = { 
         "git@github.com:ZotyDev/".insteadOf = "zoty:";
+        "git@github.com:UnnamedEngine/".insteadOf = "unen:";
       };
     };
   };

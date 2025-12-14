@@ -1,17 +1,35 @@
 { host, ... }:
-let
-  inherit (import ../../hosts/${host}/variables.nix) intelID nvidiaID;
-in
 {
   imports = [
     ../../hosts/${host}
     ../../modules/drivers
     ../../modules/core
   ];
-  # Enable GPU Drivers
-  drivers.amdgpu.enable = false;
   drivers.nvidia.enable = true;
-  drivers.nvidia-prime.enable = false;
-  drivers.intel.enable = false;
-  vm.guest-services.enable = false;
+
+  cube.gaming = {
+    enable = true;
+
+    steam = {
+      enable = true;
+      enableProtonGE = true;
+      enableGameScope = true;
+    };
+
+    minecraft = {
+      enable = true;
+      launcher = "prism";
+      enablePakku = true;
+    };
+
+    performance = {
+      enable = true;
+      enableGameMode = true;
+      enableMangoHud = true;
+      enableMemoryOptimizations = true;
+      cpuGovernor = "performance";
+    };
+
+    osu.enable = true;
+  };
 }

@@ -3,6 +3,8 @@
   ...
 }: {
   imports = [
+    ../custom
+
     ./boot.nix
     ./zramswap.nix
     ./system.nix
@@ -16,7 +18,6 @@
     ./virtualisation.nix
     ./direnv.nix
     ./stylix.nix
-    ./steam.nix
 
     inputs.stylix.nixosModules.stylix
   ];

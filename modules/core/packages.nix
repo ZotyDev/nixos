@@ -50,9 +50,7 @@
     texliveFull
     obsidian
     postman
-    osu-lazer
     davinci-resolve
     ffmpeg-full
-    hydralauncher
   ];
 }

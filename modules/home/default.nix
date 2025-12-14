@@ -10,7 +10,6 @@
     ./kde.nix
     ./wezterm.nix
     ./stylix.nix
-    ./prismlauncher.nix
     ./packages.nix
 
     ./scripts
