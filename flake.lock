@@ -213,6 +213,22 @@
     },
     "nixpkgs-stable": {
       "locked": {
+        "lastModified": 1765311797,
+        "narHash": "sha256-mSD5Ob7a+T2RNjvPvOA1dkJHGVrNVl8ZOrAwBjKBDQo=",
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "09eb77e94fa25202af8f3e81ddc7353d9970ac1b",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nixos",
+        "ref": "nixos-25.11",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "nixpkgs-stremio": {
+      "locked": {
         "lastModified": 1765363881,
         "narHash": "sha256-3C3xWn8/2Zzr7sxVBmpc1H1QfxjNfta5IMFe3O9ZEPw=",
         "owner": "nixos",
@@ -298,6 +314,7 @@
         "nix-vscode-extensions": "nix-vscode-extensions",
         "nixpkgs": "nixpkgs_2",
         "nixpkgs-stable": "nixpkgs-stable",
+        "nixpkgs-stremio": "nixpkgs-stremio",
         "plasma-manager": "plasma-manager",
         "sops-nix": "sops-nix",
         "stylix": "stylix"

@@ -1,7 +1,7 @@
 { 
   lib,
   pkgs, 
-  pkgsStable,
+  pkgsStremio,
   ... 
 }: 
 {
@@ -35,7 +35,7 @@
     kdePackages.dolphin-plugins
     kdePackages.ark
     kdePackages.isoimagewriter
-    (pkgsStable.stremio)
+    (pkgsStremio.stremio)
     discord
     jetbrains.idea-community-bin
     jdk8

@@ -3,7 +3,8 @@
 
   inputs = { 
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-25.05";
+    nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-25.11";
+    nixpkgs-stremio.url = "github:nixos/nixpkgs/nixos-25.05";
     # Home Manager
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
@@ -26,6 +27,7 @@
     self,
     nixpkgs, 
     nixpkgs-stable,
+    nixpkgs-stremio,
     home-manager,
     plasma-manager,
     sops-nix,
@@ -39,6 +41,10 @@
 
     pkgsStable = import nixpkgs-stable {
       inherit system;
+    };
+
+    pkgsStremio = import nixpkgs-stremio {
+      inherit system;
       config.allowUnfree = true;
     };
 
@@ -51,6 +57,7 @@
         inherit username;
         inherit profile; # keep using the let-bound profile for modules/scripts
         inherit pkgsStable; # some packages need to be stable
+        inherit pkgsStremio; # stremio is old
       };
       modules =[
         ./profiles/${gpuProfile}
