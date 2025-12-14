@@ -57,8 +57,6 @@
     nixosConfigurations = {
       amd = mkNixosConfig "amd";
       nvidia = mkNixosConfig "nvidia";
-      nvidia-laptop = mkNixosConfig "nvidia-laptop";
-      amd-hybrid = mkNixosConfig "amd-hybrid";
       intel = mkNixosConfig "intel";
       vm = mkNixosConfig "vm";
     };
