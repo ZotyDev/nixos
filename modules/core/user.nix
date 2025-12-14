@@ -1,4 +1,5 @@
 {
+  config,
   pkgs,
   inputs,
   username,
@@ -50,6 +51,7 @@ in
       "networkmanager"
       "docker" # access to docker as non-root
     ];
+    hashedPasswordFile = config.sops.secrets.user-password.path;
   };
   nix.settings = {
     allowed-users = [ 
@@ -61,4 +63,8 @@ in
       "@wheel" 
     ];
   };
+
+  programs.ssh.extraConfig = ''
+    IdentityFile /run/secrets/ssh-private-key
+  '';
 }

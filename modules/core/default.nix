@@ -18,7 +18,9 @@
     ./virtualisation.nix
     ./direnv.nix
     ./stylix.nix
+    ./secrets.nix
 
+    inputs.sops-nix.nixosModules.sops
     inputs.stylix.nixosModules.stylix
   ];
 }

@@ -16,6 +16,9 @@
     plasma-manager.inputs.home-manager.follows = "home-manager";
     # VSCode Marketplace
     nix-vscode-extensions.url = "github:nix-community/nix-vscode-extensions";
+    # SOPS
+    sops-nix.url = "github:Mic92/sops-nix";
+    sops-nix.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs = 
@@ -25,6 +28,7 @@
     nixpkgs-stable,
     home-manager,
     plasma-manager,
+    sops-nix,
     ...
   }@inputs:
   let 
