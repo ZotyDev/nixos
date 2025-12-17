@@ -1,7 +1,8 @@
 { 
   lib,
-  pkgs, 
-  pkgsStremio,
+  pkgs,
+  pkgsStable,
+  inputs,
   ... 
 }: 
 {
@@ -13,7 +14,9 @@
     firefox.enable = true;
   };
 
-  nixpkgs.config.allowUnfree = true;
+  nixpkgs.config = {
+    allowUnfree = true;
+  };
 
   environment.systemPackages = with pkgs; [
     ncdu # Disk Usage Analyzer With Ncurses Interface
@@ -31,7 +34,6 @@
     kdePackages.dolphin-plugins
     kdePackages.ark
     kdePackages.isoimagewriter
-    (pkgsStremio.stremio)
     discord
     jetbrains.idea-community-bin
     jdk8
@@ -48,5 +50,7 @@
     postman
     davinci-resolve
     ffmpeg-full
+  ] ++ [
+    (inputs.nixohess.packages.${pkgsStable.stdenv.hostPlatform.system}.stremio-linux-shell)
   ];
 }
